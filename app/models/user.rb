@@ -8,4 +8,17 @@ class User < ApplicationRecord
   has_many :votes, dependent: :destroy
 
   has_one_attached :avatar
+
+  def is_admin?
+    self.admin
+  end
+
+  # belongs_to :player
+
+  # rails_admin do
+  #   configure :player do
+  #     label 'Owner of this ball: '
+  #   end
+  # end
+
 end
